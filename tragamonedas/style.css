@@ -1,0 +1,184 @@
+body {
+    background-image: url(./imagenes/fondo.jpg );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#encabezado {
+    display: flex;
+    flex-direction: column;
+}
+
+#saldo-pesos {
+    font-family: fantasy;
+    font-size: 2vh;
+    color: white;
+
+}
+
+#dinero-pesos {
+    font-family: fantasy;
+    font-size: 4vh;
+    color: white;
+
+}
+
+#saldo-devcoins {
+    font-family: fantasy;
+    font-size: 2vh;
+    color: white;
+    padding-top: 2em;
+}
+
+#dinero-devcoins {
+    font-family: fantasy;
+    font-size: 4vh;
+    color: white;
+}
+
+#div-premios {
+    display: grid;
+    text-align: center;
+    top: 10;
+    left: 0;
+    background-color: white;
+    max-width: 18vh;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #923131;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img-premios {
+    display: flex;
+    justify-content: center;
+}
+
+.img-premios img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+#tragamonedas {
+    display: flex;
+    justify-content: center;
+}
+
+#historial-jugadas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    max-width: 600px;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #833939;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+#lista-jugadas {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-jugadas li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.imagen-historial {
+    margin-right: 10px;
+    max-width: 50px;
+    /* Ajusta el tamaño máximo de las imágenes */
+}
+
+
+
+.casilla {
+    display: flex;
+    border-radius: 4px;
+    width: 200px;
+    padding: 10px;
+    /*     justify-content: center; */
+    /*     align-items: center; */
+}
+
+.imagen {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    border: solid 4px rgb(110, 10, 10);
+    border-radius: 50px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+#iniciar {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    border: solid 5px rgb(85, 85, 85);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.349);
+    font-size: 4vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: auto;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+#cambiar-monedas {
+    display: flex;
+    padding-top: 2em;
+    flex-direction: column;
+    color: white;
+}
+
+#ingresar-pesos {
+    display: flex;
+    padding-top: 2em;
+    flex-direction: column;
+    color: white;
+}
+
+#boton-cambiar {
+    display: flex;
+    width: 110px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#boton-ingresar {
+    display: flex;
+    width: 110px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#pesos-ingresados {
+    display: flex;
+    flex-direction: column;
+    width: 165px;
+    justify-content: center;
+}
+
+#pesos-convertir {
+    display: flex;
+    flex-direction: column;
+    width: 165px;
+    justify-content: center;
+}
