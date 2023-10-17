@@ -38,29 +38,6 @@ body {
     color: white;
 }
 
-#div-premios {
-    display: grid;
-    text-align: center;
-    top: 10;
-    left: 0;
-    background-color: white;
-    max-width: 18vh;
-    margin-right: 5px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 3px solid #923131;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.img-premios {
-    display: flex;
-    justify-content: center;
-}
-
-.img-premios img {
-    width: 25px;
-    margin: 0 10px;
-}
 
 #tragamonedas {
     display: flex;
@@ -98,13 +75,12 @@ body {
     /* Ajusta el tamaño máximo de las imágenes */
 }
 
-
-
 .casilla {
     display: flex;
     border-radius: 4px;
     width: 200px;
     padding: 10px;
+    pointer-events: none;
     /*     justify-content: center; */
     /*     align-items: center; */
 }
@@ -181,4 +157,37 @@ img {
     flex-direction: column;
     width: 165px;
     justify-content: center;
+}
+
+#div-premios {
+    position: relative;
+    top: 10;
+    left: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    max-width: 18vh;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #923131;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.premio {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.img-premios img {
+    width: 25px;
+    margin: 0 10px;
 }

@@ -1,4 +1,4 @@
-body {
+/* body {
     background-image: url(./fotos/img1.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,33 +26,17 @@ body {
 #cont-juego {
     margin: 10px;
     padding: 10px;
-    /*      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
- */
 }
 
-/* .casilla {
+.casilla {
     width: 40px;
     height: 40px;
     background-color: rgb(224, 224, 224);
     border: 1px solid rgb(204, 204, 204);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin: 1px;
-} */
-.casilla {
-    border: 1px solid #000;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    cursor: pointer;
-    background-color: #ccc; /* Fondo gris para casillas ocultas */
-    color: transparent; /* Texto transparente para ocultar números o bombas */
- }
-.casilla.oculto {
-    /* Estilos para casillas ocultas */
-    background-color: #ccc; 
-    color: transparent;
 }
+
 #marco-juego {
     background-color: rgb(202, 202, 202);
     border: 4px solid black;
@@ -62,11 +46,56 @@ body {
     display: grid;
     place-content: center;
 }
+ */
+ body {
+    background-color: rgb(126, 145, 161);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
 
-/* .casilla {
+#cronometro {
+    font-family: 'Courier New', monospace;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    background-color: black;
+    color: red;
+    padding: 5px;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+}
+
+#cont-juego {
+    margin: 10px;
+    padding: 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.casilla {
     width: 40px;
     height: 40px;
     background-color: rgb(224, 224, 224);
     border: 1px solid rgb(204, 204, 204);
-    box-shadow: 1px 1px 2px rgb(136, 136, 136);
-} */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 1px;
+}
+
+#marco-juego {
+    background-color: rgb(202, 202, 202);
+    border: 4px solid black;
+}
+
+.div-boton {
+    display: grid;
+    place-content: center;
+}

@@ -10,62 +10,107 @@
 
 <body>
 
-<div id="juego">
-    <header id="encabezado">
-        <div id="saldo-pesos">Pesos:</div>
-        <div id="dinero-pesos">0</div>
-        <div id="saldo-devcoins">Devcoins:</div>
-        <div id="dinero-devcoins">0</div>
-    </header>
+    <div id="juego">
+        <header id="encabezado">
+            <div id="saldo-pesos">Pesos:</div>
+            <div id="dinero-pesos">0</div>
+            <div id="saldo-devcoins">Devcoins:</div>
+            <div id="dinero-devcoins">0</div>
+        </header>
 
+        <div id="historial-jugadas">
+            <h2>Historial de jugadas</h2>
+            <ul id=lista-jugadas>
+            </ul>
+        </div>
+        <section id="tragamonedas">
+            <div class="casilla">
+                <div class="imagen">
+                    <img src="./imagenes/poker.jpg" alt="">
+                </div>
+            </div>
+            <div class="casilla">
+                <div class="imagen">
+                    <img src="./imagenes/poker.jpg" alt="">
+                </div>
+            </div>
+            <div class="casilla">
+                <div class="imagen">
+                    <img src="./imagenes/poker.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+
+
+        <div id="iniciar">Lanzar</div>
+
+        <div id="ingresar-pesos">
+            <h2>Ingrese la cantidad de pesos que quiere ingresar en la pagina</h2>
+            <input type="number" id="pesos-ingresados" min="1" max="9999">
+            <input type="button" id="boton-ingresar" value="ingresar pesos" onclick="ingresarPesos()">
+        </div>
+
+        <div id="cambiar-monedas">
+            <h2>Ingrese la cantidad de pesos que quiere cambiar por Devcoins</h2>
+            <input type="number" id="pesos-convertir" min="1" max="9999">
+            <input type="button" id="boton-cambiar" value="Cambiar pesos" onclick="convertir()">
+        </div>
+    </div>
     <div id="div-premios">
-        <h2>Premios:</h2> 
-        <div class="img-premios" >
-            <img src="./imagenes/campana.jpg" alt="">
-            <img src="./imagenes/campana.jpg" alt="">
-            <img src="./imagenes/campana.jpg" alt="">
-        </div>
-    </div>
-
-    <div id="historial-jugadas">
-        <h2>Historial de jugadas</h2>
-        <ul id=lista-jugadas>
-        </ul>
-    </div>
-    <section id="tragamonedas">
-        <div class="casilla">
-            <div class="imagen">
-                <img src="./imagenes/poker.jpg" alt="">
+        <h2>Premios:</h2>
+        <div class="img-premios">
+            <!-- Premio 1 -->
+            <div class="premio">
+                <img src="./imagenes/limon.jpg" alt="Limon">
+                <img src="./imagenes/limon.jpg" alt="Limon">
+                <img src="./imagenes/limon.jpg" alt="Limon">
+                <h3>$200</h3>
+            </div>
+            <!-- Premio 2 -->
+            <div class="premio">
+                <img src="./imagenes/campana.jpg" alt="Campana">
+                <img src="./imagenes/campana.jpg" alt="Campana">
+                <img src="./imagenes/campana.jpg" alt="Campana">
+                <h3>$500</h3>
+            </div>
+            <!-- Premio 3 -->
+            <div class="premio">
+                <img src="./imagenes/diamante.jpg" alt="Diamante">
+                <img src="./imagenes/diamante.jpg" alt="Diamante">
+                <img src="./imagenes/diamante.jpg" alt="Diamante">
+                <h3>$1,000</h3>
+            </div>
+            <!-- Premio 4 -->
+            <div class="premio">
+                <img src="./imagenes/cereza.jpg" alt="Cereza">
+                <img src="./imagenes/cereza.jpg" alt="Cereza">
+                <img src="./imagenes/cereza.jpg" alt="Cereza">
+                <h3>$300</h3>
+            </div>
+            <!-- Premio 5 -->
+            <div class="premio">
+                <img src="./imagenes/herradura.jpg" alt="Herradura">
+                <img src="./imagenes/herradura.jpg" alt="Herradura">
+                <img src="./imagenes/herradura.jpg" alt="Herradura">
+                <h3>$800</h3>
+            </div>
+            <!-- Premio 6 -->
+            <div class="premio">
+                <img src="./imagenes/uva.jpg" alt="Uva">
+                <img src="./imagenes/uva.jpg" alt="Uva">
+                <img src="./imagenes/uva.jpg" alt="Uva">
+                <h3>$600</h3>
+            </div>
+            <!-- Premio 7 -->
+            <div class="premio">
+                <img src="./imagenes/bar.png" alt="Bar">
+                <img src="./imagenes/bar.png" alt="Bar">
+                <img src="./imagenes/bar.png" alt="Bar">
+                <h3>$1,200</h3>
             </div>
         </div>
-        <div class="casilla">
-            <div class="imagen">
-                <img src="./imagenes/poker.jpg" alt="">
-            </div>
-        </div>
-        <div class="casilla">
-            <div class="imagen">
-                <img src="./imagenes/poker.jpg" alt="">
-            </div>
-        </div>
-    </section>
-
-
-
-    <div id="iniciar">Lanzar</div>
-
-    <div id="ingresar-pesos">
-        <h2>Ingrese la cantidad de pesos que quiere ingresar en la pagina</h2>
-        <input type="number" id="pesos-ingresados" min="1" max="9999">
-        <input type="button" id="boton-ingresar" value="ingresar pesos" onclick="ingresarPesos()">
     </div>
-
-    <div id="cambiar-monedas">
-        <h2>Ingrese la cantidad de pesos que quiere cambiar por Devcoins</h2>
-        <input type="number" id="pesos-convertir" min="1" max="9999">
-        <input type="button" id="boton-cambiar" value="Cambiar pesos" onclick="convertir()">
-    </div>
-</div>
 
     <script src="script.js"></script>
 
