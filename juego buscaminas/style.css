@@ -71,6 +71,13 @@
     width: 60px;
     height: 30px;
 }
+.boton-iniciar {
+    display: flex;
+    place-content: center;
+    width: 50px; 
+    height: 50px; 
+}
+
 
 #cont-juego {
     margin: 10px;
@@ -98,4 +105,10 @@
 .div-boton {
     display: grid;
     place-content: center;
+}
+
+#botonRevelar{
+    display: flex;
+    place-content: center;
+    margin-top: 5px;
 }

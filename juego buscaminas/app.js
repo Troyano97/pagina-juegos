@@ -15,7 +15,7 @@ function iniciarCronometro() {
 
 function detenerCronometro() {
     clearInterval(cronometro);
-    cronometro = null; // Restablece el cronómetro para futuros juegos
+    cronometro = null; // Restablece el cronómetro
 }
 
 function actualizarCronometro() {
@@ -27,11 +27,10 @@ function hacerClic(fila, columna) {
     const casilla = document.getElementById(`casilla-${fila * tablero[0].length + columna}`);
 
     if (tablero[fila][columna].revelar) {
-        return; // No hagas nada si la casilla ya se ha revelado
+        return; // no hagas nada si la casilla ya se ha revelado
     }
 
-    if (tablero[fila][columna].value === '💣') {
-        /*     casilla.innerText = '💥'; */
+    if (tablero[fila][columna].value === '💥') {
         finalizarJuego();
         revelarBombas();
         detenerCronometro();
@@ -39,13 +38,32 @@ function hacerClic(fila, columna) {
         // revela las casillas y verifica si ganaste
         tablero[fila][columna].revelar = true;
         casilla.innerText = tablero[fila][columna].value;
-        // falta agregar logica si ganas
+
+        if (victoria()) {
+            mostrarMensaje("¡Ganaste!")
+        }
     }
 }
+
+function victoria() {
+    for (let i = 0; i < tablero.length; i++) {
+        for (let j = 0; j < tablero[0].length; j++) {
+            if (tablero[i][j].value !== '💥' && !tablero[i][j].revelar) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+function mostrarMensaje(mensaje) {
+    window.confirm(mensaje)
+}
+
 function revelarBombas() {
     for (let i = 0; i < tablero.length; i++) {
         for (let j = 0; j < tablero[i].length; j++) {
-            if (tablero[i][j].value === '💣') {
+            if (tablero[i][j].value === '💥') {
                 const casilla = document.getElementById(`casilla-${i * tablero[0].length + j}`);
                 casilla.innerText = tablero[i][j].value;
             }
@@ -53,7 +71,7 @@ function revelarBombas() {
     }
 }
 function crearJuego() {
-    detenerCronometro(); // Detén el cronómetro antes de iniciar un nuevo juego
+    detenerCronometro();
 
     //obtiene la dificultad
     let selectDificultad = document.getElementById("dificultad");
@@ -83,7 +101,7 @@ function crearJuego() {
             break;
     }
 
-    //crea el tablero vacio
+    //crea la matriz vacía
     tablero = [];
     for (let i = 0; i < filas; i++) {
         tablero.push([]);
@@ -107,12 +125,12 @@ function crearJuego() {
     bombas.forEach((casillaAleatoria) => {
         const fila = Math.floor(casillaAleatoria / columnas)
         const columna = casillaAleatoria % columnas;
-        tablero[fila][columna].value = '💣';
+        tablero[fila][columna].value = '💥';
     });
 
     for (let i = 0; i < filas; i++) {
         for (let j = 0; j < columnas; j++) {
-            if (tablero[i][j].value !== '💣') {
+            if (tablero[i][j].value !== '💥') {
                 let bombasCercanas = 0;
 
                 for (let x = -1; x <= 1; x++) {
@@ -125,14 +143,14 @@ function crearJuego() {
                             filaAdyacente < filas &&
                             columnaAdyacente >= 0 &&
                             columnaAdyacente < columnas &&
-                            tablero[filaAdyacente][columnaAdyacente].value === '💣'
+                            tablero[filaAdyacente][columnaAdyacente].value === '💥'
                         ) {
                             bombasCercanas++;
                         }
                     }
                 }
 
-                tablero[i][j].value = bombasCercanas; // Asignar la cantidad de bombas cercanas a la propiedad 'value'
+                tablero[i][j].value = bombasCercanas; // asigna la cantidad de bombas cercanas con 'value'
             }
         }
     }
@@ -173,5 +191,6 @@ function revelarTablero() {
             casilla.innerText = tablero[i][j].value;
         }
     }
+    detenerCronometro()
     document.getElementById('cont-juego').classList.remove('no-click');
 }

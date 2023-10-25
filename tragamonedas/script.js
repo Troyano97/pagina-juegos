@@ -8,7 +8,7 @@ const imagenes = [
     { nombre: "bar", url: "./imagenes/bar.png" }
 ];
 
-const costoJugada = 100;
+const costoJugada = 25;
 let saldoDevcoins = 0;
 let numImagen = [];
 
@@ -32,6 +32,8 @@ function tirar() {
 
     const jugadaActual = "Jugada: " + numImagen[0].nombre + " - " + numImagen[1].nombre + " - " + numImagen[2].nombre;
     actualizarHistorial(jugadaActual);
+
+    verificarPremio();
 }
 
 //escoge un numero aleatorio 
@@ -51,7 +53,7 @@ function actualizarSaldoDevcoins() {
     document.getElementById("dinero-devcoins").textContent = saldoDevcoins.toFixed(2);
 }
 
-// convierte los pesos a devcoins
+//convierte los pesos a devcoins
 function convertir() {
     var valorP = parseFloat(document.getElementById("pesos-convertir").value);
     if (isNaN(valorP) || valorP === 0) {
@@ -116,10 +118,57 @@ function actualizarHistorial(jugada) {
     listaJugadas.appendChild(nuevaJugada);
 }
 
-// verifica que la posicion de las imagenes sea iguales en los 3 casos y en caso de ser correcta saldra un alert
-function verificar_premio() {
-    if (numImagen[0].nombre === numImagen[1].nombre && numImagen[1].nombre === numImagen[2].nombre) {
-        alert("ganaste");
+// verifica las casillas y en caso de ser 3 iguales se entreaga un premio, si son 2 iguales es la mitad 
+function verificarPremio() {
+    const premios = {
+        limon: 600,
+        campana: 500,
+        diamante: 1200,
+        cereza: 300,
+        herradura: 700,
+        uva: 800,
+        bar: 2500,
+    };
+
+    const posImg1 = numImagen[0].nombre;
+    const posImg2 = numImagen[1].nombre;
+    const posImg3 = numImagen[2].nombre;
+
+    // verifica las combinaciones y en caso de ser 3 img iguales dara el premio economico que se definio arriba
+    if (posImg1 === posImg2 && posImg2 === posImg3) {
+        if (premios[posImg1]) {
+            saldoDevcoins += premios[posImg1];
+            actualizarSaldoDevcoins();
+            setTimeout(function () {
+                alert("¡Ganaste " + premios[posImg1] + " devcoins!");
+            }, 200);
+            return;
+        }
+    }
+
+    // verifica y compara la casilla 1 con las 2/3 y da la mitad del premio completo en caso de ser 2 img iguales
+    if (posImg1 === posImg2 || posImg1 === posImg3) {
+        if (premios[posImg1]) {
+            saldoDevcoins += premios[posImg1] / 2;
+            actualizarSaldoDevcoins();
+            setTimeout(function () {
+                alert("¡Ganaste " + premios[posImg1] / 2 + " devcoins!");
+            }, 200);
+            return;
+        }
+    }
+
+    // verifica y compara la casilla 2 con la 3 y da la mitad del premio completo en caso de ser 2 img iguales
+
+    if (posImg2 === posImg3) {
+        if (premios[posImg2]) {
+            saldoDevcoins += premios[posImg2] / 2;
+            actualizarSaldoDevcoins();
+            setTimeout(function () {
+                alert("¡Ganaste " + premios[posImg2] / 2 + " devcoins!");
+            }, 200);
+            return;
+        }
     }
 }
 
