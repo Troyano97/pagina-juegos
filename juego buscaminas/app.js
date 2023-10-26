@@ -3,7 +3,7 @@ let cronometro;
 let tablero;
 
 function iniciarCronometro() {
-    if (!cronometro) { // Inicia el cronómetro solo si no está activo
+    if (!cronometro) { // INICIA EL CRONOMETRO
         tiempo = 0;
         actualizarCronometro();
         cronometro = setInterval(function () {
@@ -27,7 +27,7 @@ function hacerClic(fila, columna) {
     const casilla = document.getElementById(`casilla-${fila * tablero[0].length + columna}`);
 
     if (tablero[fila][columna].revelar) {
-        return; // no hagas nada si la casilla ya se ha revelado
+        return; 
     }
 
     if (tablero[fila][columna].value === '💥') {
@@ -70,6 +70,7 @@ function revelarBombas() {
         }
     }
 }
+
 function crearJuego() {
     detenerCronometro();
 
@@ -160,10 +161,10 @@ function crearJuego() {
     let contador = 0;
     for (let i = 0; i < filas; i++) {
         contenidoHTML += '<div class="row">';
-
         for (let j = 0; j < columnas; j++) {
             const casillaID = contador++;
             contenidoHTML += `<div id="casilla-${casillaID}" class="col casilla" onclick="hacerClic(${i}, ${j})"></div>`;
+       
         }
         contenidoHTML += '</div>';
     }

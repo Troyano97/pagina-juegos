@@ -11,9 +11,10 @@
 </head>
 
 <body>
-  <h1 id=titulo>Buscaminas</h1>
+  <h1 class=titulo>Buscaminas</h1>
 
-    <div>
+  <div class="contenedor-juego">
+    <div class="dificultades">
       <label for="">Elija la dificutad</label>
       <select id="dificultad">
         <option value="facil">Principiante</option>
@@ -21,6 +22,7 @@
         <option value="experto">Experto</option>
       </select>
     </div>
+
     <div class="div-boton">
       <img class="boton-iniciar" src="./carita.jpg" alt="Iniciar" onclick="crearJuego()">
     </div>
@@ -30,6 +32,29 @@
       <div id="cont-juego"></div>
     </div>
     <button id="botonRevelar" onclick="revelarTablero()">Revelar</button>
+  </div>
+
+  <div class="niveles">
+    <p>Niveles</p>
+    <p>Nivel principiante: 8 x 8 casillas y 10 minas.</p>
+    <p>Nivel intermedio: 16 x 16 casillas y 40 minas.</p>
+    <p>Nivel experto: 16 x 30 casillas y 99 minas.</p>
+  </div>
+
+  <div class="reglas">
+    <p>
+      Reglas
+      
+      El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.
+
+      Algunas casillas tienen un número, este número indica las minas que son en todas las casillas circundantes. Así,
+      si una casilla tiene el número 3, significa que de las ocho casillas que hay alrededor (si no es en una esquina o
+      borde) hay 3 con minas y 5 sin minas. Si se descubre una casilla sin número indica que ninguna de las casillas
+      vecinas tiene mina y estas se descubren automáticamente.
+
+      Si se descubre una casilla con una mina se pierde la partida.
+    </p>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

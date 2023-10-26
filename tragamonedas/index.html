@@ -23,6 +23,17 @@
             <ul id=lista-jugadas>
             </ul>
         </div>
+        <div id="ingresar-pesos">
+            <h2>Ingrese la cantidad de pesos que quiere ingresar en la pagina</h2>
+            <input type="number" id="pesos-ingresados" min="1" max="9999">
+            <input type="button" id="boton-ingresar" value="ingresar pesos" onclick="ingresarPesos()">
+        </div>
+
+        <div id="cambiar-monedas">
+            <h2>Ingrese la cantidad de pesos que quiere cambiar por Devcoins</h2>
+            <input type="number" id="pesos-convertir" min="1" max="9999">
+            <input type="button" id="boton-cambiar" value="Cambiar pesos" onclick="convertir()">
+        </div>
         <section id="tragamonedas">
             <div class="casilla">
                 <div class="imagen">
@@ -45,17 +56,6 @@
 
         <div id="iniciar">Lanzar</div>
 
-        <div id="ingresar-pesos">
-            <h2>Ingrese la cantidad de pesos que quiere ingresar en la pagina</h2>
-            <input type="number" id="pesos-ingresados" min="1" max="9999">
-            <input type="button" id="boton-ingresar" value="ingresar pesos" onclick="ingresarPesos()">
-        </div>
-
-        <div id="cambiar-monedas">
-            <h2>Ingrese la cantidad de pesos que quiere cambiar por Devcoins</h2>
-            <input type="number" id="pesos-convertir" min="1" max="9999">
-            <input type="button" id="boton-cambiar" value="Cambiar pesos" onclick="convertir()">
-        </div>
     </div>
 
     <div id="div-premios">

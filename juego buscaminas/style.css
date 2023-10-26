@@ -1,83 +1,28 @@
-/* body {
-    background-image: url(./fotos/img1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: grid;
-    place-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-
-#cronometro {
-    font-family: 'Courier New', monospace;
-    position: relative;
-    left: 10px;
-    top: 10px;
-    background-color: black;
-    color: red;
-    padding: 5px;
-    border-radius: 5px;
-    width: 60px;
-    height: 30px;
-}
-
-#cont-juego {
-    margin: 10px;
-    padding: 10px;
-}
-
-.casilla {
-    width: 40px;
-    height: 40px;
-    background-color: rgb(224, 224, 224);
-    border: 1px solid rgb(204, 204, 204);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 1px;
-}
-
-#marco-juego {
-    background-color: rgb(202, 202, 202);
-    border: 4px solid black;
-}
-
-.div-boton {
-    display: grid;
-    place-content: center;
-}
- */
- body {
+body {
     background-color: rgb(126, 145, 161);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: grid;
-    place-content: center;
+}
+
+.titulo {
     text-align: center;
-    width: 100%;
-    height: 100%;
 }
 
 #cronometro {
     font-family: 'Courier New', monospace;
-    position: relative;
-    left: 10px;
-    top: 10px;
+    position: center;
     background-color: black;
     color: red;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 60px;
     height: 30px;
 }
+
 .boton-iniciar {
     display: flex;
     place-content: center;
-    width: 50px; 
-    height: 50px; 
+    width: 50px;
+    height: 50px;
 }
-
 
 #cont-juego {
     margin: 10px;
@@ -107,8 +52,39 @@
     place-content: center;
 }
 
-#botonRevelar{
+#botonRevelar {
     display: flex;
     place-content: center;
     margin-top: 5px;
+}
+
+.boton-iniciar {
+    display: flex;
+    place-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid;
+    margin: 5px;
+}
+
+.contenedor-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.niveles {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.reglas {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+    max-width: 500px;
+    padding: auto;
 }
